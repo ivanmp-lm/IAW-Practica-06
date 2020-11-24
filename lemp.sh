@@ -3,6 +3,10 @@
 #Mostrar comandos
 set -x
 
+#Clonar repositorio con todos los archivos necesarios
+rm -r IAW-Practica-6/
+git clone https://github.com/ivanmp-lm/IAW-Practica-6.git
+
 #Actualizar repositorios
 apt update
 
@@ -32,3 +36,6 @@ cp /IAW-Practica-6/www.conf /etc/php/7.4/fpm/pool.d/www.conf
 
 #Reiniciar servicio php7.4-fpm para aplicar los cambios
 systemctl restart php7.4-fpm
+
+#Eliminar archivos sobrantes
+rm -r IAW-Practica-6/
