@@ -20,19 +20,19 @@ apt install php-fpm php-mysql -y
 sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/" /etc/php/7.4/fpm/php.ini
 
 #Reiniciar PHP para efectuar los cambios
-systemctl restart php7.4-fpmcp
+systemctl restart php7.4-fpm
 
 #Copiar archivo con la configuración de Nginx
-cp /IAW-Practica-6/default /etc/nginx/sites-available/
+cp default /etc/nginx/sites-available/
 
 #Reiniciar servicio Nginx
 systemctl restart nginx
 
 #Copiar archivo info.php para comprobar la instalación
-cp /IAW-Practica-6/info.php /var/www/html/info.php
+cp info.php /var/www/html/info.php
 
 #Copiar archivo www.conf con la directiva listen 127.0.0.1:9000
-cp /IAW-Practica-6/www.conf /etc/php/7.4/fpm/pool.d/www.conf
+cp www.conf /etc/php/7.4/fpm/pool.d/www.conf
 
 #Reiniciar servicio php7.4-fpm para aplicar los cambios
 systemctl restart php7.4-fpm
